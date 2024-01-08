@@ -1,0 +1,144 @@
+body{
+    padding: 0;
+    margin: 0;
+    background-color: pink;
+}
+
+body .btnYes{
+    background-color: #ff8dc7;
+}
+
+body .btnYes .confirm{
+    display: none;
+}
+.heart {
+    animation: heartbeat 1s infinite;
+    background-color: red;
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    margin-left: 5px;
+}
+
+.heart::before,
+.heart::after{
+    content: '';
+    background-color: red;
+    border-radius: 50%;
+    width: 8px;
+    height: 8px;
+    position: absolute;
+}
+
+.heart::before{
+    top: -5px;
+    left: 0;
+}
+
+.heart::after{
+    top: 0;
+    left: 5px;
+}
+
+@keyframes heartbeat {
+    0%{
+        transform: scale(1);
+    }
+    20%{
+        transform: scale(1.25);
+    }
+    40%{
+        transform: scale(1.5);
+    }
+}
+
+.X {
+    animation: X 1s infinite;
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    margin-left: 5px;
+}
+
+.X::before,
+.X::after{
+    color: red;
+    padding-left: 5px;
+    content: 'X';
+    border-radius: 50%;
+    width: 8px;
+    height: 8px;
+    position: absolute;
+}
+.X::before{
+    top: -5px;
+    left: 0;
+}
+
+.X::after{
+    top: 0;
+    left: 5px;
+}
+@keyframes X {
+    0%{
+        transform: scale(1);
+    }
+    20%{
+        transform: scale(1.25);
+    }
+    40%{
+        transform: scale(1.5);
+    }
+}
+.confirm{
+    min-width: 500px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #b0498d;
+    box-shadow: 3px 3px 3px #7e3a68;
+    border-radius: 5px;
+}
+
+.confirm-container{
+    padding: 10px;
+}
+
+.confirm-container .title{
+    color: #fff;
+    text-align: center;
+    font-size: 22px;
+}
+
+.confirm-actions{
+    display: flex;
+    column-gap: 10px;
+}
+
+.confirm-actions button{
+    width: 100%;
+    cursor: pointer;
+    font-size: 10px;
+    border: none;
+    padding: 5px;
+    color: #000;
+    font-weight: 600;
+    border-radius: 5px;
+}
+
+.confirm-actions .btnYes{
+    background-color: #a3ddcb;
+}
+
+.confirm-actions .btnNo{
+    position: relative;
+    background-color: #e97777;
+}
+
+@media (max-width: 400px) {
+    .confirm{
+        min-width: 300px;
+        border-radius: 5px;
+    }
+}
